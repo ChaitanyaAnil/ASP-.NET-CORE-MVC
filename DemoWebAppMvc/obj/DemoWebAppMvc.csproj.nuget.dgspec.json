@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ASP.net MVC\\DemoWebAppMvc\\DemoWebAppMvc.csproj": {}
+    "D:\\ASP .NET CORE MVC\\DemoWebAppMvc\\DemoWebAppMvc.csproj": {}
   },
   "projects": {
-    "D:\\ASP.net MVC\\DemoWebAppMvc\\DemoWebAppMvc.csproj": {
+    "D:\\ASP .NET CORE MVC\\DemoWebAppMvc\\DemoWebAppMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP.net MVC\\DemoWebAppMvc\\DemoWebAppMvc.csproj",
+        "projectUniqueName": "D:\\ASP .NET CORE MVC\\DemoWebAppMvc\\DemoWebAppMvc.csproj",
         "projectName": "DemoWebAppMvc",
-        "projectPath": "D:\\ASP.net MVC\\DemoWebAppMvc\\DemoWebAppMvc.csproj",
+        "projectPath": "D:\\ASP .NET CORE MVC\\DemoWebAppMvc\\DemoWebAppMvc.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP.net MVC\\DemoWebAppMvc\\obj\\",
+        "outputPath": "D:\\ASP .NET CORE MVC\\DemoWebAppMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

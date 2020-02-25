@@ -6072,11 +6072,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ASP.net MVC\\DemoWebApp\\DemoWebApp.csproj",
+      "projectUniqueName": "D:\\ASP .NET CORE MVC\\DemoWebApp\\DemoWebApp.csproj",
       "projectName": "DemoWebApp",
-      "projectPath": "D:\\ASP.net MVC\\DemoWebApp\\DemoWebApp.csproj",
+      "projectPath": "D:\\ASP .NET CORE MVC\\DemoWebApp\\DemoWebApp.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\ASP.net MVC\\DemoWebApp\\obj\\",
+      "outputPath": "D:\\ASP .NET CORE MVC\\DemoWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

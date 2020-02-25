@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "GetCustomerDetails";
+}
+
+<h1>GetCustomer data Details</h1>
+<div class="container">
+<table class=" table table-bordered">
+    <tr class="table-dark">
+        <th>Customer_id</th>
+        <th>Customer_Name</th>
+        <th>Customer_city</th>
+        <th>Email</th>
+    </tr>
+    <tr class="table-primary">
+        <td>@Model.CustomerId</td>
+        <td>@Model.CustomerName</td>
+        <td>@Model.CustomerCity</td>
+        <td>@Model.CustomerEmail</td>
+    </tr>
+</table>
+</div>
