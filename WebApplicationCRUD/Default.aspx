@@ -14,7 +14,7 @@
          </div>
         <div class="jumbotron">
             <h3>READ</h3>
-           <a class="navbar-brand" href="DisplayAll.aspx">All  student details &raquo;</a>
+           <a class="navbar-brand badge badge-info" href="DisplayAll.aspx">All  student details &raquo;</a>
              <a class="navbar-brand" href="DisCourse.aspx">All  course details &raquo;</a>
              <a class="navbar-brand" href="DisFaculty.aspx">All  faculty details &raquo;</a>
             </div>

@@ -6,7 +6,10 @@
     <div class="jumbotron">
         <asp:Label ID="Label1" runat="server" Text="Enter faculty id"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Delete" OnClick="Button1_Click" />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="TextBox1" ForeColor="#FF3300" ValidationGroup="vg">Enter valid id</asp:RequiredFieldValidator><br />
+
+
+        <asp:Button ID="Button1" runat="server" Text="Delete" OnClick="Button1_Click" ValidationGroup="vg" />
 
 
 
