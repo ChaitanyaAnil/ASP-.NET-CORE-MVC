@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MovieDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MovieDbModelStoreContainer">
+    <EntitySet Name="Movies" EntityType="MovieDbModel.Store.Movies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Multiplexes" EntityType="MovieDbModel.Store.Multiplexes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="MovieMultiplex" Association="MovieDbModel.Store.MovieMultiplex">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="Multiplex" EntitySet="Multiplexes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="Movie_id" />
+    </Key>
+    <Property Name="Movie_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Movie_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Release_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Multiplexes">
+    <Key>
+      <PropertyRef Name="Multiplex_id" />
+    </Key>
+    <Property Name="Multiplex_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Multiplex_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Movie_id" Type="int" Nullable="false" />
+    <Property Name="MovieMovie_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="MovieMultiplex">
+    <End Role="Movie" Type="MovieDbModel.Store.Movies" Multiplicity="1" />
+    <End Role="Multiplex" Type="MovieDbModel.Store.Multiplexes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Movie_id" />
+      </Principal>
+      <Dependent Role="Multiplex">
+        <PropertyRef Name="MovieMovie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MovieDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MovieDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Movies" EntityType="MovieDbModel.Movie" />
+    <EntitySet Name="Multiplexes" EntityType="MovieDbModel.Multiplex" />
+    <AssociationSet Name="MovieMultiplex" Association="MovieDbModel.MovieMultiplex">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="Multiplex" EntitySet="Multiplexes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="Movie_id" />
+    </Key>
+    <Property Name="Movie_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Movie_Name" Type="String" Nullable="false" />
+    <Property Name="Release_Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Multiplexes" Relationship="MovieDbModel.MovieMultiplex" FromRole="Movie" ToRole="Multiplex" />
+  </EntityType>
+  <EntityType Name="Multiplex">
+    <Key>
+      <PropertyRef Name="Multiplex_id" />
+    </Key>
+    <Property Name="Multiplex_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Multiplex_Name" Type="String" Nullable="false" />
+    <Property Name="Location" Type="String" Nullable="false" />
+    <Property Name="Movie_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Movie" Relationship="MovieDbModel.MovieMultiplex" FromRole="Multiplex" ToRole="Movie" />
+    <Property Name="MovieMovie_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="MovieMultiplex">
+    <End Type="MovieDbModel.Movie" Role="Movie" Multiplicity="1" />
+    <End Type="MovieDbModel.Multiplex" Role="Multiplex" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Movie_id" />
+      </Principal>
+      <Dependent Role="Multiplex">
+        <PropertyRef Name="MovieMovie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

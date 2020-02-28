@@ -1,0 +1,62 @@
+﻿@model MovieWebAPP.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Release_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Release_Date)
+        </dd>
+        <h4>List of Multiplexes Available</h4>
+        <table class="table">
+            <tr>
+                <th>
+                    Multiplex id
+                </th>
+                <th>
+                    Multiplex name
+                </th>
+                <th>
+                    Multiplex location
+                </th>
+            </tr>
+
+            @foreach (var item in Model.Multiplexes)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Multiplex_id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Multiplex_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                </tr>
+            }
+        </table>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Movie_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

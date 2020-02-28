@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MovieDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MovieDbModelStoreContainer">
+    <EntitySet Name="Movies" EntityType="MovieDbModel.Store.Movies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Multiplexes" EntityType="MovieDbModel.Store.Multiplexes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="MovieMultiplex" Association="MovieDbModel.Store.MovieMultiplex">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="Multiplex" EntitySet="Multiplexes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="Movie_id" />
+    </Key>
+    <Property Name="Movie_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Movie_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Release_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Multiplexes">
+    <Key>
+      <PropertyRef Name="Multiplex_id" />
+    </Key>
+    <Property Name="Multiplex_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Multiplex_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Movie_id" Type="int" Nullable="false" />
+    <Property Name="MovieMovie_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="MovieMultiplex">
+    <End Role="Movie" Type="MovieDbModel.Store.Movies" Multiplicity="1" />
+    <End Role="Multiplex" Type="MovieDbModel.Store.Multiplexes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Movie_id" />
+      </Principal>
+      <Dependent Role="Multiplex">
+        <PropertyRef Name="MovieMovie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MovieDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MovieDbEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Movies" EntityType="MovieDbModel.Movie" />
+          <EntitySet Name="Multiplexes" EntityType="MovieDbModel.Multiplex" />
+          <AssociationSet Name="MovieMultiplex" Association="MovieDbModel.MovieMultiplex">
+            <End Role="Movie" EntitySet="Movies" />
+            <End Role="Multiplex" EntitySet="Multiplexes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Movie">
+          <Key>
+            <PropertyRef Name="Movie_id" />
+          </Key>
+          <Property Name="Movie_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Movie_Name" Type="String" Nullable="false" />
+          <Property Name="Release_Date" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Multiplexes" Relationship="MovieDbModel.MovieMultiplex" FromRole="Movie" ToRole="Multiplex" />
+        </EntityType>
+        <EntityType Name="Multiplex">
+          <Key>
+            <PropertyRef Name="Multiplex_id" />
+          </Key>
+          <Property Name="Multiplex_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Multiplex_Name" Type="String" Nullable="false" />
+          <Property Name="Location" Type="String" Nullable="false" />
+          <Property Name="Movie_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Movie" Relationship="MovieDbModel.MovieMultiplex" FromRole="Multiplex" ToRole="Movie" />
+          <Property Name="MovieMovie_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="MovieMultiplex">
+          <End Type="MovieDbModel.Movie" Role="Movie" Multiplicity="1" />
+          <End Type="MovieDbModel.Multiplex" Role="Multiplex" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie">
+              <PropertyRef Name="Movie_id" />
+            </Principal>
+            <Dependent Role="Multiplex">
+              <PropertyRef Name="MovieMovie_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MovieDbModelStoreContainer" CdmEntityContainer="MovieDbEntities">
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="IsTypeOf(MovieDbModel.Movie)">
+        <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="Movie_id" ColumnName="Movie_id" />
+          <ScalarProperty Name="Movie_Name" ColumnName="Movie_Name" />
+          <ScalarProperty Name="Release_Date" ColumnName="Release_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Multiplexes">
+      <EntityTypeMapping TypeName="IsTypeOf(MovieDbModel.Multiplex)">
+        <MappingFragment StoreEntitySet="Multiplexes">
+          <ScalarProperty Name="Multiplex_id" ColumnName="Multiplex_id" />
+          <ScalarProperty Name="Multiplex_Name" ColumnName="Multiplex_Name" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Movie_id" ColumnName="Movie_id" />
+          <ScalarProperty Name="MovieMovie_id" ColumnName="MovieMovie_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

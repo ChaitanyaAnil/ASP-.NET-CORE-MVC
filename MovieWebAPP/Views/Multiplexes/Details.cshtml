@@ -1,0 +1,50 @@
+﻿@model MovieWebAPP.Models.Multiplex
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Multiplex</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Multiplex_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Multiplex_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Movie_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Movie_Name)
+        </dd>
+        
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Multiplex_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
