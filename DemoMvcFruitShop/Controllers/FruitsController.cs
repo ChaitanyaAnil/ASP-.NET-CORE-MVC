@@ -54,7 +54,7 @@ namespace DemoMvcFruitShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Fruit_id,Fruit_Name,Fruit_Type,Price")] Fruit fruit)
+        public async Task<IActionResult> Create([Bind("Fruit_id,Fruit_Name,Color,Price")] Fruit fruit)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace DemoMvcFruitShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Fruit_id,Fruit_Name,Fruit_Type,Price")] Fruit fruit)
+        public async Task<IActionResult> Edit(int id, [Bind("Fruit_id,Fruit_Name,Color,Price")] Fruit fruit)
         {
             if (id != fruit.Fruit_id)
             {

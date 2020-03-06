@@ -25,10 +25,10 @@ namespace DemoMvcFruitShop.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Fruit_Name")
+                    b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Fruit_Type")
+                    b.Property<string>("Fruit_Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")

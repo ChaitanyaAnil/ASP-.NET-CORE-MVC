@@ -14,7 +14,7 @@ namespace DemoMvcFruitShop.Models
             get;set;
         }
         public string Fruit_Name { get; set; }
-        public string Fruit_Type { get; set; }
+        public string Color { get; set; }
         public double Price { get; set; }
     }
 }

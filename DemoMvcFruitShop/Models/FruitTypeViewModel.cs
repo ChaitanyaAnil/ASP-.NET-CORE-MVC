@@ -9,8 +9,8 @@ namespace DemoMvcFruitShop.Models
     public class FruitTypeViewModel
     {
         public List<Fruit> Fruits { get; set; }
-        public SelectList Types { get; set; }
-        public string FruitType { get; set; }
+        public SelectList Colors { get; set; }
+        public string FruitColor { get; set; }
         public string Searchstr { get; set; }
     }
 }

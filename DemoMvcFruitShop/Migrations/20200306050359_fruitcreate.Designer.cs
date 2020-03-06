@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DemoMvcFruitShop.Migrations
 {
     [DbContext(typeof(FruitContext))]
-    [Migration("20200306043823_intialmode")]
-    partial class intialmode
+    [Migration("20200306050359_fruitcreate")]
+    partial class fruitcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,10 +27,10 @@ namespace DemoMvcFruitShop.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Fruit_Name")
+                    b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Fruit_Type")
+                    b.Property<string>("Fruit_Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
