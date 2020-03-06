@@ -10,7 +10,9 @@ namespace MVCwebAppBook.Models
     {
         public List<Book> Books { get; set; }
         public SelectList Categories { get; set; }
+        public SelectList Publishers { get; set; }
         public string BookCategory { get; set; }
         public string Searchstr { get; set; }
+        public string Publisherdet { get; set; }
     }
 }

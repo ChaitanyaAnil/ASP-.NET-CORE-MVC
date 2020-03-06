@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DemoMvcFruitShop.Models.Fruit>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    <select asp-for="FruitType" asp-items="Model.Types">
+        <option value="">All</option>
+    </select>
+    Title: <input type="text" asp-for="Searchstr" />
+    <input type="submit" value="search" />
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fruit_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fruit_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fruit_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fruit_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Fruit_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Fruit_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Fruit_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

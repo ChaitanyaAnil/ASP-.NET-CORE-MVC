@@ -25,7 +25,7 @@ namespace MVCwebAppBook.Models
                         Category = "fiction",
                         Price=600,
                         AuthorName="Narayan",
-                        Publisher="Pengwin",
+                        Publisher="anil",
                         Releasedate=Convert.ToDateTime("02-15-2019")
                     },
                     new Book

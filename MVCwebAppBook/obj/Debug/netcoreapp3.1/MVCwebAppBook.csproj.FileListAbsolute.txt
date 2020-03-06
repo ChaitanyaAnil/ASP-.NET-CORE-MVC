@@ -133,7 +133,6 @@ D:\ASP .NET CORE MVC\MVCwebAppBook\bin\Debug\netcoreapp3.1\runtimes\win-x86\nati
 D:\ASP .NET CORE MVC\MVCwebAppBook\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\ASP .NET CORE MVC\MVCwebAppBook\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\ASP .NET CORE MVC\MVCwebAppBook\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\ASP .NET CORE MVC\MVCwebAppBook\obj\Debug\netcoreapp3.1\MVCwebAppBook.csprojAssemblyReference.cache
 D:\ASP .NET CORE MVC\MVCwebAppBook\obj\Debug\netcoreapp3.1\staticwebassets\MVCwebAppBook.StaticWebAssets.Manifest.cache
 D:\ASP .NET CORE MVC\MVCwebAppBook\obj\Debug\netcoreapp3.1\staticwebassets\MVCwebAppBook.StaticWebAssets.xml
 D:\ASP .NET CORE MVC\MVCwebAppBook\obj\Debug\netcoreapp3.1\MVCwebAppBook.MvcApplicationPartsAssemblyInfo.cache
@@ -162,3 +161,4 @@ D:\ASP .NET CORE MVC\MVCwebAppBook\obj\Debug\netcoreapp3.1\MVCwebAppBook.Views.p
 D:\ASP .NET CORE MVC\MVCwebAppBook\obj\Debug\netcoreapp3.1\MVCwebAppBook.csproj.CopyComplete
 D:\ASP .NET CORE MVC\MVCwebAppBook\obj\Debug\netcoreapp3.1\MVCwebAppBook.dll
 D:\ASP .NET CORE MVC\MVCwebAppBook\obj\Debug\netcoreapp3.1\MVCwebAppBook.pdb
+D:\ASP .NET CORE MVC\MVCwebAppBook\obj\Debug\netcoreapp3.1\MVCwebAppBook.csprojAssemblyReference.cache

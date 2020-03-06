@@ -20,15 +20,18 @@ namespace MVCwebAppBook.Controllers
         }
 
         // GET: Books
-        public async Task<IActionResult> Index(string bookcategory, string searchstr)
+        public async Task<IActionResult> Index(string bookcategory, string searchstr,string Publisherdet)
         {
             IQueryable<string> categoryquery = from b in _context.Books
                                                orderby b.Category
                                                select b.Category;
+            IQueryable<string> Publisherquery = from b in _context.Books
+                                                orderby b.Publisher
+                                                select b.Publisher;
             //above LINQ query to get Categerirs from book                                select b.Category;
             var books = from b in _context.Books
                         select b;
-            if (!String.IsNullOrEmpty(searchstr))
+            if (!string.IsNullOrEmpty(searchstr))
             {
                 books = books.Where(b => b.BTitle.Contains(searchstr));
             }
@@ -36,11 +39,22 @@ namespace MVCwebAppBook.Controllers
             {
                 books = books.Where(x => x.Category == bookcategory);
             }
+            if (!string.IsNullOrEmpty(Publisherdet))
+            {
+                books = books.Where(x => x.Publisher== Publisherdet);
+            }
             var bookcategoryVM = new BookCategoryViewModel
             {
                 Categories = new SelectList(await categoryquery.Distinct().ToListAsync()),
+                Publishers = new SelectList(await Publisherquery.Distinct().ToListAsync()),
                 Books = await books.ToListAsync()
-        };
+                //  Books = await books.ToListAsync()
+            };
+          /*  var publisgVm = new BookCategoryViewModel
+            {
+                Publishers = new SelectList(await Publisherquery.Distinct().ToListAsync()),
+
+            };*/
             return View(bookcategoryVM);
 
             
